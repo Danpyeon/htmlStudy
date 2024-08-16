@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--DOCTYPE -> 크롬이나 기타 브라우저가 HTML을 인식하기 위한 것-->
+<html lang="en">
+    <!-- lang : 브라우저를 열었을 때 처음으로 지원해주는 언어를 표기 -->
+<head>
+    <!-- 이 브라우저가 유지 될 때 필요한 정보를 보관하는 공간-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CSS 선언 -->
+     <style>
+        tr,
+        td,
+        th, 
+        table {
+            border : 1px solid #000;
+        }
+     </style>
+</head>
+<body>
+    <!--제목 태그-->
+    <h1>제목 1</h1> <!-- h1(큼)~h6(작음)-->
+    <h2>Hello World</h2>
+    <h3>Hello World</h3>
+    <h4>Hello World</h4>
+    <h5>Hello World</h5>
+    <h6>Hello World</h6>
+    <hr>
+    <!-- p : 문단 작성 -->
+     <p>집에가고싶다</p>
+     <!-- 목록 태그 -->
+      <!-- ol(순서 있음), ul(순서 없음)-->
+       <ol>
+        <li>korea</li>
+        <li>china</li>
+        <li>usa</li>
+       </ol>
+       <ul>
+        <li>apple</li>
+        <li>banana</li>
+        <li>asdfasdsa</li>
+        <ul>
+            <li>home</li>
+            <li>my sweet home</li>
+        </ul>
+       </ul>
+
+       <!-- 표 -->
+        <!-- tr(행), td(열)-->
+         <table>
+            <tr>
+                <td>100</td>
+                <td>90</td>
+                <td>80</td>
+                <td>70</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>20</td>
+                <td>30</td>
+                <td>40</td>
+            </tr>
+         </table>
+         <table>
+            <thead>
+                <tr>
+                    <!-- th는 해당 컬럼을 설명-->
+                    <th></th>
+                    <th>이름</th>
+                    <th>국어</th>
+                    <th>수학</th>
+                    <th>영어</th>
+                    <th>체육</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th rowspan="2">학생</th>
+                    <th>ㄱㅈㅎ</th>
+                    <td>100</td>
+                    <td>90</td>
+                    <td>80</td>
+                    <td>70</td>
+                </tr>
+                <tr>
+                    <th>ㅈㄱㄹ</th>
+                    <td>10</td>
+                    <td>20</td>
+                    <td>30</td>
+                    <td>40</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="2">평균</th>
+                    <td>10</td>
+                    <td>20</td>
+                    <td>30</td>
+                    <td>40</td>
+                </tr>
+            </tfoot>
+            
+         </table>
+
+         <span> jLable </span>
+         <p> ㄱㄴㄷㄹㅁㅂㅅ <span>ㅇㅈㅊ</span>ㅋㅌㅍㅎ</p>
+
+</body>
+</html>
