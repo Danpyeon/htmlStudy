@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+</head>
+<body>
+    <form action="" method="get">
+        <input type="text" name="" id="user_id" placeholder="ID"><br/>
+        <input type="text" value="Hello" id="hello"><br/>
+        <input type="text" value="잠금" id="tt" disabled="true">
+        <input type="password"><br/>
+        <h4>SelectBox</h4>
+        <select>
+            <option>서울</option>
+            <option>경기</option>
+            <option>충남</option>
+        </select>
+    
+        <h4>checkBox</h4>
+        <input type="checkbox" name="hobby" id="" value="독서">독서
+        <input type="checkbox" name="hobby" id="" value="수면" checked>수면
+        <input type="checkbox" name="hobby" id="" value="게임">게임
+    
+        <h4>radio</h4>
+        <input type="radio" name="language" id="" value="java">java
+        <input type="radio" name="language" id="" value="python">python
+        <input type="radio" name="language" id="" value="html">html
+
+        <h4>file</h4>
+        <input type="file">
+
+        <input type="reset" value="초기화">
+        <input type="button" value="javascript" onclick="click11()">
+        <input type="submit" value="form start">
+    </form>
+
+    <script>
+        let hello = document.getElementById('hello');
+        // id가 hello인 친구를 가져온다. getElementById()
+        console.log(hello);
+
+        let hobby = document.getElementsByName('hobby');
+        // Name = hobby인 애들을 가져온다. ~Element > 단일 / ~Elements > 배열
+        console.log(hobby);
+        //check 상태 확인
+        console.log(hobby[0].checked);
+        console.log(hobby[0].value);
+
+        for (let i=0; i<hobby.length; i++) {
+            if(hobby[i].checked) console.log(hobby[i].value);
+        }
+
+        let user_id = document.getElementById('user_id');
+
+        function click11() {
+            if(user_id.value.trim().length==0) {
+                alert('잘못 된 값');
+                user_id.focus;
+                return;
+            }
+
+            for (let i=0; i<hobby.length; i++) {
+            if(hobby[i].checked) {
+                console.log(hobby[i].value);
+            }
+        }
+    }
+        </script>
+</body>
+</html>
