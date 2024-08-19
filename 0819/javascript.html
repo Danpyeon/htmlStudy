@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="back">
+    <!--
+    class, css 컨트롤을 위한 변수명
+    name, html 기준과 server 기준이 나뉨
+    html 기준으론 group이 됨
+    server 기준으로 name이 key값이 됨 
+    js 할 때 id가 제일 중요. html 태그에서 id는 중복 허용 X
+    -->
+    <input type="radio" name="color" onchange="changeColor('red')">빨강
+    <input type="radio" name="color" onchange="changeColor('blue')">파랑
+    <input type="radio" name="color" onchange="changeColor('green')">초록
+
+    <script>
+        //접근제어자 리턴타입 메소드명 (매개변수)
+        //java-script 데이터 타입 정의 X
+        function changeColor(colorName) {
+            console.log(colorName);
+            document.getElementById('back').style.backgroundColor = colorName;
+        }
+    </script>
+</body>
+</html>

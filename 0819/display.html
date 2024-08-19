@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .inner {
+            width: 50px;
+            height: 50px;
+            background-color: cornflowerblue;
+            border: 1px solid black;
+        } 
+        .none {
+            display: none;
+        }
+        .block {
+            display: block;
+        }
+        .inline {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner none">1</div>
+        <div class="inner inline">2</div>
+        <div class="inner">3</div>
+        <div class="inner inline">4</div>
+        <div class="inner inline">5</div>
+    </div>
+</body>
+</html>
+<!--
+none (감춤. html 태그 자체를 없앤다.) 
+block 
+- 가로 영역을 모두 채움
+- 다음 태그가 존재 할 때, 자동으로 개행
+- 문단 사용
+- width, height 설정 가능
+inline
+- contents 영역만큼 지정
+- 자동으로 개행 되지 않음
+- width, height 설정 안 됨. padding 사용
+- word 같은 문서에서 볼드 이텔릭 색상 밑줄 등 글자나 문장에 효과를 주기 위한 단위를 할 수 있음
+inline-block
+- block과 inline의 중간.  
+- 요소는 inline인데 적용은 block 
+- inline 마냥 콘텐츠만큼 영억 지정, 가로로 배치
+- block의 width, height 지정 가능
+-->

@@ -1,0 +1,5 @@
+static(기본값)
+static은 요소가 HTML 문서에서 일반적 흐름을 따라 배치가 되게 하는 기본 값
+
+relative
+static
