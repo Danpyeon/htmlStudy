@@ -2,4 +2,14 @@ static(기본값)
 static은 요소가 HTML 문서에서 일반적 흐름을 따라 배치가 되게 하는 기본 값
 
 relative
-static
+static과 마찬가지로 요소가 문서의 일반적인 흐름에 따라 배치되게 함.
+static과의 차이점은 요소가 자신의 static 위치에서 top, right, bottom, left와 같은 속성에 의한 상대적인 위치에 배치됨.
+
+absolute
+요소가 일반적 흐름을 따르지 않도록 함. position: static 속성을 가지고 있지 않은 부모를 기준으로 움직임. 부모 포지션에 relative, absolute, fixed 태그가 없다면 가장 위 태그 body가 기준이 됨.
+
+fixed
+absolute와 마찬가지로 요소가 문서의 일반적인 흐름에서 제거됨. 대신 스크린의 뷰포트를 기준으로 한 위치에 배치됨. 스크롤이 되어도 움직이지 않는 고정자리를 가짐.
+
+sticky 
+요소가 HTML 문서 안에서 static과 마찬가지로 일반적 흐름을 따라가 스크롤 임계점 뭐시기
