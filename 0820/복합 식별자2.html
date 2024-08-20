@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>형제 식별자</title>
+
+    <style>
+        p+ul>li {
+            margin: 5px;
+            border: 2px solid blue;
+        }
+        section > p ~ ul {
+            border: 2px solid green;
+        }
+    </style>
+</head>
+<body>
+    <p>P태그</p>
+    <ul>
+        <li>out1</li>
+    </ul>
+    <section>
+        <p>P태그2</p>
+        <ul>
+            <li>list1</li>
+            <li>list2</li>
+            <ul>
+                <li>list3-1</li>
+                <li>list3-3</li>
+            </ul>
+        </ul>
+    </section>
+</body>
+</html>

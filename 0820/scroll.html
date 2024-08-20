@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <title>Scroll Effect</title>
+        <style media='screen'>
+            html::-webkit-scrollbar {
+                width:20px;
+            }
+            html::-webkit-scrollbar-thumb {
+                background: rgb(199, 204, 219);
+            }
+            html::-webkit-scrollbar-track {
+                background: #fff;
+            }
+            body {
+                margin : 0;
+                padding : 0;
+                box-sizing: 0;
+                overflow-x: hidden;
+            }
+            .image {
+                height: 100vh;
+                width:100vw;
+                background: url(/images/다운로드.jfif) no-repeat;
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+            }
+            .content {
+                background: linear-gradient(rgb(42, 50, 75) 50%, transparent 0) 0 0,
+                radial-gradient(circle closest-side, rgb(42, 50, 75) 53%, transparent 0) 0 0,
+                radial-gradient(circle closest-side, rgb(42, 50, 75) 50%, transparent 0) 50px 0 rgb(118, 123, 145);
+                background-size: 100px 200px;
+                background-repeat: repeat-x;
+                padding:50px;
+                font-family: tahomea;
+            }
+            .content h1{
+                color: rgb(225, 229, 238);
+                margin-top: -15px;
+                font-size: 40px;
+                font-weight: bold;
+            }
+            .content p {
+                padding : 30px;
+                font-size:15px;
+                color:#333;
+            }
+            p {
+                font-weight: bold;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="image"></div>
+        <div class="content">
+            <h1>Scrolling Effect Test</h1>
+            <p><a href="https://www.youtube.com/@hyeok3993" target="_blank">Youtube</a></p>
+            <p><a href="https://www.instagram.com/ju_h261?igsh=MXZ0bGtncjF2N2Nxbg==" target="_blank">Instagram</a></p>
+            <p>개인 블로그</p>
+            <p>개인 블로그</p>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>복합 식별자</title>
+
+    <style>
+        section li {
+            color: blue;
+        }
+        section p {
+            color: red;
+        }
+        section>ul>li {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>out1</li>
+    </ul>
+    <section>
+        <p>P태그</p>
+        <ul>
+            <li>list1</li>
+            <li>list2</li>
+            <ul>
+                <li>list3-1</li>
+                <li>list3-3</li>
+            </ul>
+        </ul>
+    </section>
+</body>
+</html>
