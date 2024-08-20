@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지버튼</title>
+
+    <style>
+        input:hover {
+            border: 2px solid black;
+            background-color: darkgrey;
+        }
+        input {
+            margin-right: 5px;
+        }
+        img {
+            display: none;
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="이미지1" id="btn1" onclick="클릭(1)">
+    <input type="button" value="이미지2" id="btn2" onclick="클릭(2)">
+    <input type="button" value="이미지3" id="btn3" onclick="클릭(3)">
+
+    <img id="img1" src="/images/images (1).jfif">
+    <img id="img2" src="/images/images.jfif">
+    <img id="img3" src="/images/IMG_7374.jfif">
+
+    <script>
+        function 클릭(number) {
+            let img = document.getElementById('img'+number);
+            if (img.style.display == 'block') {
+                img.style.display = 'none';
+            } else {
+                img.style.display = 'block';
+            }
+        }
+        
+    </script>
+</body>
+</html>

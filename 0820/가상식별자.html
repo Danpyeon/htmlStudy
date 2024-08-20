@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상 식별자</title>
+
+    <style>
+        a[href] {
+            text-decoration: none;
+            font: 20px;
+            font-weight: bold;
+            display: block;
+        }
+        a:hover {
+            color: blue;
+            border: 1px solid #999;
+        }
+        a:visited {
+            color: #999;
+
+        }
+        a:link {
+            color: green;
+        }
+        input:hover {
+            border-color: blue;
+        }
+        input:focus {
+            border-color: green;
+        }
+        label {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        label::before {
+            content: '*';
+            color: red;
+        }
+        label::after {
+            content: ':';
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.google.com" target="_blank">꾸글</a>
+    <a href="https://www.asgwdqwdwq.com" target="_blank">이게뭐노?</a>
+    <a href="https://www.asgoiou8i9hjwq.com" target="_blank">이게뭐노?2</a>
+    <a href="https://www.korea.com" target="_blank">Korea</a>
+
+    <label>입력창</label>
+    <input type="text" id="">
+</body>
+</html>
