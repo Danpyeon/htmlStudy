@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 페이지</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        table {
+            border: 1px solid lightgray;
+        }
+        tr>td:nth-child(1) {
+            text-align: center;
+            font-weight: bold;
+        }
+        .t_head {
+            background-color: rgb(159, 181, 255);
+        }
+        .t_title {
+            background-color: rgb(210, 220, 255);
+        }
+        .btn {
+            margin-top: 50px;
+            margin-left: 36%;
+            margin-right: 5px;
+        }
+        .intro {
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <form novalidate>
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3" class="t_head">회원 기본 정보</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="t_title">아이디:</td>
+                    <td><input type="text" id="input_id" minlength="4" maxlength="12" required></td>
+                    <td>4~12자의 영문 대소문자와 숫자로만 입력</td>
+                </tr>
+                <tr>
+                    <td class="t_title">비밀번호:</td>
+                    <td><input type="password" id="input_pw" minlength="4" maxlength="12" required></td>
+                    <td>4~12자의 영문 대소문자와 숫자로만 입력</td>
+                </tr>
+                <tr>
+                    <td class="t_title">비밀번호 확인:</td>
+                    <td colspan="2"><input type="password" id="pw_check" minlength="4" maxlength="12" required></td>
+                </tr>
+                <tr>
+                    <td class="t_title">메일주소:</td>
+                    <td><input type="text" id="email" size="23" required></td>
+                    <td>예) mail@mail.net</td>
+                </tr>
+                <tr>
+                    <td class="t_title">이름:</td>
+                    <td><input type="text" id="input_name" size="23" required></td>
+                </tr>
+            </tbody>
+            <thead>
+                <tr>
+                    <td colspan="3" class="t_head">개인 신상 정보</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="t_title">주민등록번호:</td>
+                    <td><input type="text" id="human_id" maxlength="6" size="6" onkeyup="check_bday()"> - <input type="password" id="human_pw" size="6" maxlength="7" required></td>
+                    <td>예)123456-7891234</td>
+                </tr>
+                <tr>
+                    <td class="t_title">생일:</td>
+                    <td><input type="text" id="b_year" size="4">년 <select id="b_month">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>월 
+                <select id="b_day">
+                    <option class="hide" value="1">1</option>
+                    <option class="hide" value="2">2</option>
+                    <option class="hide" value="3">3</option>
+                    <option class="hide" value="4">4</option>
+                    <option class="hide" value="5">5</option>
+                    <option class="hide" value="6">6</option>
+                    <option class="hide" value="7">7</option>
+                    <option class="hide" value="8">8</option>
+                    <option class="hide" value="9">9</option>
+                    <option class="hide" value="10">10</option>
+                    <option class="hide" value="11">11</option>
+                    <option class="hide" value="12">12</option>
+                    <option class="hide" value="13">13</option>
+                    <option class="hide" value="14">14</option>
+                    <option class="hide" value="15">15</option>
+                    <option class="hide" value="16">16</option>
+                    <option class="hide" value="17">17</option>
+                    <option class="hide" value="18">18</option>
+                    <option class="hide" value="19">19</option>
+                    <option class="hide" value="20">20</option>
+                    <option class="hide" value="21">21</option>
+                    <option class="hide" value="22">22</option>
+                    <option class="hide" value="23">23</option>
+                    <option class="hide" value="24">24</option>
+                    <option class="hide" value="25">25</option>
+                    <option class="hide" value="26">26</option>
+                    <option class="hide" value="27">27</option>
+                    <option class="hide" value="28">28</option>
+                    <option class="hide" value="29">29</option>
+                    <option class="hide" value="30">30</option>
+                    <option class="hide" value="31">31</option>
+                </select>일</td>
+                </tr>
+                <tr>
+                    <td class="t_title">관심분야:</td>
+                    <td colspan="2">
+                        <input type="checkbox" name="interest" value="컴퓨터">컴퓨터
+                        <input type="checkbox" name="interest" value="게임">게임
+                        <input type="checkbox" name="interest" value="음악">음악
+                        <input type="checkbox" name="interest" value="영화">영화
+                        <input type="checkbox" name="interest" value="운동">운동
+                    </td>
+                </tr>
+                <tr>
+                    <td class="t_title">자기소개:</td>
+                    <td colspan="2"><input type="text" class="intro" id="introdu" required></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <input type="button" class="btn" value="회원가입" onclick="가입()">
+        <input type="button" value="입력창 초기화" onclick="초기화()">
+    </form>
+    
+    <script>
+
+        function 초기화() {
+            location.reload();
+        }
+
+        function user_check(str) {
+            return /^[A-Za-z0-9][A-Za-z0-9]*$/.test(str);
+        }
+
+        function check_bday() {
+            let user_num = document.getElementById('human_id').value;
+            let year = user_num.substring(0, 2);
+            let month = user_num.substring(2,4);
+            let day = user_num.substring(4,6);
+
+            if (user_num.length == 6) {
+                if (month != '00' && day != '00') {
+                    if (parseInt(month) < 13 && parseInt(day) < 32) {
+                        if (parseInt(year) < 25 || year == '00' ) {
+                            document.getElementById('b_year').value = 20 + year;
+                            document.getElementById('b_month').value = parseInt(month);
+                            document.getElementById('b_day').value = parseInt(day);
+                        } else { 
+                            document.getElementById('b_year').value = 19 + year;
+                            document.getElementById('b_month').value = parseInt(month);
+                            document.getElementById('b_day').value = parseInt(day);
+                        }
+                    } 
+                } 
+            } 
+        }
+
+        function 가입() {
+            let id = document.getElementById('input_id').value;
+            let pw = document.getElementById('input_pw').value;
+            let pw_C = document.getElementById('pw_check').value;
+            let h_pw = document.getElementById('human_pw').value;
+            let intro = document.getElementById('introdu').value;
+            const interest = document.getElementsByName('interest');
+            let intC = 0;
+            let email = document.getElementById('email').value;
+            
+            
+            if (id.length != 0 ) {
+                if(id.length >= 4) {
+                    if (user_check(id)) {
+                        console.log('사용 가능');
+                    } else {
+                        console.log('아이디는 영문 또는 숫자만 입력 가능');
+                    }
+                }
+            }
+
+            if (!id) {
+                console.log('아이디 입력 필요');
+            }
+            
+
+            if (pw.length != 0) {
+                if (pw.length >= 4) {
+                    if (user_check(pw)) {
+                        console.log('비밀번호 사용 가능');
+                    } else {
+                        console.log('비밀번호는 영문 또는 숫자만 입력 가능');
+                    }
+                } 
+            } 
+
+
+            if (!pw) {
+                console.log('비밀번호 입력 필요');
+            }
+
+            if (pw.value != pw_C.value) {
+                console.log('비밀번호 불일치');
+            }
+
+            if (!email) {
+                console.log('이메일 입력 필요');
+            }
+
+            if (!document.getElementById('input_name').value) {
+                console.log('이름 입력 필요');
+            }
+            
+            if (!document.getElementById('human_id').value) {
+                console.log('주민번호 앞자리 입력');
+            }
+            
+            if (!h_pw || h_pw.length != 7) {
+                console.log('주민번호 뒷자리를 제대로 입력해주세요.');
+            }
+
+            for (let i = 0; i < interest.length; i++) {
+                if (interest[i].checked) {
+                    intC++;
+                } 
+            }
+            if (intC != 0) {
+                        console.log('이상 무.');
+                    } else {
+                        console.log('최소 한 개 이상 선택해주세요.');
+                    }
+
+            if (!intro) {
+                console.log('자기소개란을 입력해주세요.');
+            }
+
+
+        }
+    
+    </script>
+</body>
+</html>
