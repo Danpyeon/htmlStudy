@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한 글자씩 보이게 하기</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Bad+Script');
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url(/images/maxresdefault.jpg);
+            background-size: cover;
+            font-family: 'Bad script', cursive;
+            overflow: hidden;
+        }
+        h1 {
+            margin: 0;
+            padding: 0;
+            color: transparent;
+            font-size: 11em;
+        }
+        h1 span {
+            display: table-cell;
+            animation: animate 1s linear infinite;
+        }
+        h1 span:nth-child(1n) {
+            animation-delay: 1s;
+        }
+        h1 span:nth-child(1n+1) {
+            animation-delay: 1.2s;
+        }
+        h1 span:nth-child(1n+2) {
+            animation-delay: 1.4s;
+        }
+        h1 span:nth-child(1n+3) {
+            animation-delay: 1.6s;
+        }
+        h1 span:nth-child(1n+4) {
+            animation-delay: 1.8s;
+        }
+        h1 span:nth-child(1n+5) {
+            animation-delay: 2s;
+        }
+        h1 span:nth-child(1n+6) {
+            animation-delay: 2.2s;
+        }
+        h1 span:nth-child(1n+7) {
+            animation-delay: 2.4s;
+        }
+        h1 span:nth-child(1n+8) {
+            animation-delay: 2.6s;
+        }
+        h1 span:nth-child(1n+9) {
+            animation-delay: 2.8s;
+        }
+        h1 span:nth-child(1n+10) {
+            animation-delay: 3.0s;
+        }/*
+        h1 span:nth-child(1n+11) {
+            animation-delay: 3.2s;
+        } */
+        
+        @keyframes animate {
+            0%, 100% {
+                color: whitesmoke;
+                filter: blur(2px);
+                text-shadow: 0 0 10px darkcyan,
+                0 0 20px darkcyan,
+                0 0 40px darkcyan,
+                0 0 60px darkcyan,
+                0 0 80px darkcyan,
+                0 0 120px darkcyan,
+                0 0 200px darkcyan;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <span>T</span>
+        <span>h</span>
+        <span>e</span>
+        <span>&nbsp;</span>
+        <span>F</span>
+        <span>o</span>
+        <span>r</span>
+        <span>e</span>
+        <span>s</span>
+        <span>t</span>
+    </h1>
+    
+</body>
+</html>

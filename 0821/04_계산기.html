@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+</head>
+<body>
+    <input type="text" name="" id="text1"> + <input type="text" name="" id="text2">
+    <input type="button" value="계산하기" onclick="계산()">
+    <input type="text" id="text3">
+
+    <script>
+        function 계산() {
+            let t1 = document.getElementById('text1').value;
+            let t2 = document.getElementById('text2').value;
+            document.getElementById('text3').value = (parseInt(t1)+parseInt(t2));
+        }
+    </script>
+</body>
+</html>

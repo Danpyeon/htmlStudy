@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="user_id" value="Hello World">
+    <input type="button" value="클릭" onclick="클릭()">
+
+    <script>
+        
+        let aa = document.getElementById('user_id').value;
+        document.getElementById('user_id').value = 'java';
+        aa.value = '집가고싶다';
+
+        function 클릭() {
+            alert(aa.value);
+        }
+    </script>
+</body>
+</html>
