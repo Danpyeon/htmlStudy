@@ -201,12 +201,18 @@
                         console.log('사용 가능');
                     } else {
                         console.log('아이디는 영문 또는 숫자만 입력 가능');
+                        document.getElementById('input_id').value = "";
+                        document.getElementById('input_id').focus();
+                        return;
                     }
                 }
             }
 
             if (!id) {
                 console.log('아이디 입력 필요');
+                document.getElementById('input_id').value = "";
+                        document.getElementById('input_id').focus();
+                        return;
             }
             
 
@@ -216,6 +222,9 @@
                         console.log('비밀번호 사용 가능');
                     } else {
                         console.log('비밀번호는 영문 또는 숫자만 입력 가능');
+                        document.getElementById('input_pw').value = "";
+                        document.getElementById('input_pw').focus();
+                        return;
                     }
                 } 
             } 
@@ -223,26 +232,44 @@
 
             if (!pw) {
                 console.log('비밀번호 입력 필요');
+                document.getElementById('input_pw').value = "";
+                document.getElementById('input_pw').focus();
+                return;
             }
 
             if (pw.value != pw_C.value) {
                 console.log('비밀번호 불일치');
+                document.getElementById('input_pw').value = "";
+                document.getElementById('input_pw').focus();
+                return;
             }
 
             if (!email) {
                 console.log('이메일 입력 필요');
+                document.getElementById('email').value = "";
+                document.getElementById('email').focus();
+                return;
             }
 
             if (!document.getElementById('input_name').value) {
                 console.log('이름 입력 필요');
+                document.getElementById('input_name').value = "";
+                document.getElementById('input_name').focus();
+                return;
             }
             
             if (!document.getElementById('human_id').value) {
                 console.log('주민번호 앞자리 입력');
+                document.getElementById('human_id').value = "";
+                document.getElementById('human_id').focus();
+                return;
             }
             
             if (!h_pw || h_pw.length != 7) {
                 console.log('주민번호 뒷자리를 제대로 입력해주세요.');
+                document.getElementById('input_pw').value = "";
+                document.getElementById('input_pw').focus();
+                return;
             }
 
             for (let i = 0; i < interest.length; i++) {
@@ -258,6 +285,9 @@
 
             if (!intro) {
                 console.log('자기소개란을 입력해주세요.');
+                document.getElementById('introdu').value = "";
+                document.getElementById('introdu').focus();
+                return;
             }
 
 
