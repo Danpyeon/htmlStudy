@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 400px;
+            height: 500px;
+            border: 3px solid lightslategray;
+            transition: width 2s, height 2s ;
+            text-align: center;
+        }
+        .wid {
+            width: 80vh;
+        }
+        .hei {
+            height: 800px;
+        }
+        .rad {
+            animation: rota 5s infinite linear;
+        }
+        .home {
+            font-size: 50px;
+            font-weight: bold;
+        }
+        .color {
+            background-color: cornflowerblue;
+        }
+
+        @keyframes rota {
+            from { transform: rotate(0deg);}
+            to { transform: rotate(360deg);}
+        }
+    </style>
+</head>
+<body>
+    <input type="button" id="btn1" value="너비 늘리기">
+    <input type="button" id="btn2" value="높이 늘리기">
+    <input type="button" id="btn3" value="회전">
+    <input type="button" id="btn4" value="집에 가기">
+    <input type="button" id="btn5" value="색상 변경">
+    <div class="box"></div>
+
+    <script>
+        document.getElementById('btn1').addEventListener('click', wid);
+        document.getElementById('btn2').addEventListener('click', hei);
+        document.getElementById('btn3').addEventListener('click', rad);
+        document.getElementById('btn4').addEventListener('click', home);
+        document.getElementById('btn5').addEventListener('click', color);
+
+        function wid() {
+            let box = document.querySelector('.box');
+            
+            if (box.classList.contains('wid')) {
+                box.classList.remove('wid');
+            } else {
+                box.classList.add('wid');
+            }
+        }
+
+        function hei() {
+            let box = document.querySelector('.box');
+
+            if(box.classList.contains('hei')) {
+                box.classList.remove('hei');
+            } else {
+                box.classList.add('hei');   
+            }
+        }
+
+        function rad() {
+            let box = document.querySelector('.box');
+
+            if(box.classList.contains('rad')) {
+                box.classList.remove('rad');
+            } else {
+                box.classList.add('rad');   
+            }
+        }
+
+        function home() {
+            let box = document.querySelector('.box');
+
+            if(box.classList.contains('home')) {
+                box.classList.remove('home');
+                document.querySelector('.box').innerHTML = '';
+            } else {
+                box.classList.add('home');   
+                document.querySelector('.box').innerHTML = '<div>응못가</div>';
+            }
+        }
+
+        function color() {
+            let box = document.querySelector('.box');
+
+            if(box.classList.contains('color')) {
+                box.classList.remove('color');
+            } else {
+                box.classList.add('color');   
+            }
+        }
+    </script>
+</body>
+</html>

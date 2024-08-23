@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">hello world</h1>
+
+    <script>
+        let title = document.getElementById('title').innerText;
+        //alert(title);
+        document.getElementById('title').innerText = 'home';
+
+        alert('경고');
+
+        let pro = prompt('입력 메시지');
+        document.getElementById('title').innerText = pro;
+
+        let comp = confirm('한국 사람 맞니?');
+        if(comp) {
+            alert('Yes');
+        } else {
+            alert('No');
+        }
+    </script>
+</body>
+</html>
