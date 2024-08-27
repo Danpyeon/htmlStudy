@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>골라</title>
+    <style>
+        img {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>풍신류 믿기</h1>
+    <select id="sel1" onchange="cgimg()">
+        <option value="1">헤이하치</option>
+        <option value="2">카즈야</option>
+        <option value="3">데빌진</option>
+    </select>
+    <br>
+    <img id="displayIMG" src="/images/ㅎㅇㅎㅊ.jpg">
+
+    <script>
+        function cgimg() {
+            let selc = document.getElementById('sel1').value;
+            let img = document.getElementById('displayIMG');
+            let str ='';
+            if (selc === '1') {
+                img.src = '/images/ㅎㅇㅎㅊ.jpg';
+            } else if (selc === '2') {
+                img.src = '/images/ㅋㅈㅇ.webp';
+            } else {
+                 img.src = '/images/ㄷㅂㅈ.webp';
+            }
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="input1" placeholder="입력">
+    <input type="button" value="출력" onclick="send()">
+    <span id="result">출력</span>
+
+    <script>
+        function send() {
+            let ip1 = document.getElementById('input1').value;
+            document.getElementById('result').innerText = ip1;
+        }
+    </script>
+</body>
+</html>
