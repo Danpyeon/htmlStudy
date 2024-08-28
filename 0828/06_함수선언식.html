@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+
+        // 함수 선언식. 함수를 먼저 만들겠다.
+        start();
+        function start() {
+            console.log('start');
+        }
+
+        // 함수 표현식
+        let fn02 = function() {
+            console.log('end');
+        }
+        fn02();
+
+        // ES6
+        let fn03 = () => {
+            console.log('fn03');
+        }
+        fn03();
+
+        start02(1);
+        function start02(num1) {
+            console.log('start02: ', num1);
+        }
+
+        let fn04 = num1 => {
+            console.log('fn04 : ', num1);
+        }
+        fn04(2);
+        // callback
+        document.querySelector('.add').addEventListener('click', function() {});
+        document.querySelector('.add').addEventListener('click', fn02);
+        document.querySelector('.add').addEventListener('click', start);
+        
+    </script>
+</body>
+</html>

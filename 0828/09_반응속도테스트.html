@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응속도테스트</title>
+
+    <style>
+         * {
+            margin: 0px;
+            padding: 0px;
+        }
+        .main {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .dHead {
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+            text-align: center;
+        }
+        .margin20 {
+            margin: 20px;
+        }
+        .startHome {
+            padding: 15px;
+            border: 1px solid #000;
+            border-radius: 8px;
+
+            font-size: 15px;
+            font-weight: bold;
+            user-select: none;
+        }
+        .startHome:hover {
+            border: 3px solid black;
+        }
+        .result {
+            font-size: 30px;
+            font-weight: bold;
+        }
+        #d1.wait {
+            background-color: red;
+        }
+    </style>
+</head>
+<body id="backColor">
+    <div class="main">
+        <div class="dHead">
+            <h1 class="margin20">반응속도 테스트</h1>
+            <div id="d1" class="startHome margin20" onclick="tlwkr()">
+                <div>시작</div>
+            </div>
+            <div id="d2" class="startHome margin20" onclick="speedT()">
+                <div>클릭(배경이 초록색이 되었을 때 눌러주세요!)</div>
+            </div>
+            <div id="result2">
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let startTime, endTime;
+        let bColor = document.getElementById('backColor');
+        let game = false;
+        let timeId;
+        startTime = new Date();
+
+        function tlwkr() {
+            let randTime = Math.random() * 4;
+            bColor.style.backgroundColor = 'red';
+            timeId = setTimeout(() => {
+                bColor.style.backgroundColor = 'green';
+                startTime = new Date();
+            }, (randTime+1) * 1000);
+        }
+
+        function speedT() {
+            endTime = new Date();
+            if (startTime != null && bColor.style.backgroundColor === 'green') {
+                let resultTime = Math.ceil(endTime - startTime) / 1000;
+                document.getElementById('result2').innerText = resultTime+'초';
+                bColor.style.backgroundColor = 'lightgray';
+            } else if (bColor.style.backgroundColor === 'red') {
+                clearTimeout(timeId);
+                document.getElementById('result2').innerText = '너무 성급합니다! 초록색이 되었을 때 눌러주세요.';
+                bColor.style.backgroundColor = 'white';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기이</title>
+</head>
+<body>
+    <input type="text" name="" id="t1">
+    <input type="text" name="" id="t2">
+    <input type="button" value="계산" onclick="res()">
+
+    <script>
+        
+
+        let res = () => {
+            t1 = +document.getElementById('t1').value;
+            t2 = +document.getElementById('t2').value;
+            let result = {};
+            result.plus = t1+t2; 
+            result.min = t1-t2;
+            result.mul = t1*t2;
+            result.div = t1/t2;
+
+            console.log(result);
+        }
+    </script>
+</body>
+</html>

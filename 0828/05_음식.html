@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>음식 사진</title>
+
+    <style>
+
+
+        /** main tool */
+        .picMain {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /** 음식사진 메인 */
+        .mainPic {
+            width: 400px;
+            height: 300px;
+        }
+
+        /** 음식사진 보조 **/
+        .suvPic {
+            width: 100%;
+            height: 100vh;
+        }
+
+        /** 갤러리 스타일 */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .photo {
+            width: calc(33% - 40px);
+            /* 너비 설정, 마진을 고려한 계산 */
+            margin: 20px;
+            height: 200px;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+        }
+
+        /** 버튼 공간 */
+        .btn_area {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            height: 70px;
+        }
+
+        .btn01 {
+            margin: 15px;
+            padding: 15px;
+            height: 30px;
+            border-radius: 15px;
+            font-size: 25px;
+            font-weight: bold;
+            align-items: center;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="picMain">
+        <div class="mainPic" id="main1"></div>
+        <div class="suvPic">
+            <div class="btn_area">
+                <div class="btn01" onclick="디저트('all')">전체</div>
+                <div class="btn01" onclick="디저트('cookie')">쿠키</div>
+                <div class="btn01" onclick="디저트('cake')">케이크</div>
+            </div>
+            <!-- 사진첩 갤러리 -->
+            <div class="gallery" id="g1">
+                <!-- 추가 사진 필요 시 여기에 더 추가 -->
+            </div>
+        </div>
+    </div>
+    <script>
+        const delist = {
+            list : [
+                {
+                    category: 'cookie',
+                    url: '/images/쿠키1.jfif',
+                },
+                {
+                    category: 'cookie',
+                    url: '/images/쿠키2.jfif',
+                },
+                {
+                    category: 'cookie',
+                    url: '/images/쿠키3.jfif',
+                },
+                {
+                    category: 'cookie',
+                    url: '/images/쿠키4.jfif',
+                },
+                {
+                    category: 'cookie',
+                    url: '/images/쿠키5.jfif',
+                },
+                {
+                    category: 'cookie',
+                    url: '/images/쿠키6.jfif',
+                },
+                {
+                    category: 'cake',
+                    url: '/images/ㅋㅇㅋ1.jfif',
+                },
+                {
+                    category: 'cake',
+                    url: '/images/ㅋㅇㅋ2.jfif',
+                },
+                {
+                    category: 'cake',
+                    url: '/images/ㅋㅇㅋ3.jfif',
+                },
+                {
+                    category: 'cake',
+                    url: '/images/ㅋㅇㅋ4.jfif',
+                },
+                {
+                    category: 'cake',
+                    url: '/images/ㅋㅇㅋ5.jfif',
+                },
+                {
+                    category: 'cake',
+                    url: '/images/ㅋㅇㅋ6.jfif',
+                },
+            ]
+        }
+        function 디저트(category) {
+            let gallery = document.getElementById('g1');
+            const li = delist.list;
+            let str = '';
+
+            for (let i=0; i<li.length; i++) {
+                if (category === 'all' || category === li[i].category) {
+                    str += "<div class='photo' onclick='mainC(" + i + ")'><img src= '" + li[i].url + "'></div>"
+                }
+            }
+            g1.innerHTML = str;
+        }
+
+        function mainC(i) {
+            let main = document.getElementById('main1');
+            const li = delist.list;
+            
+            main.innerHTML = '<img src="'+li[i].url+'">';
+        }
+    </script>
+</body>
+</html>
