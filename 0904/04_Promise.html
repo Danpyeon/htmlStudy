@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise9</title>
+    <link href="/bootstrap/css/bootstrap.css">
+    <script src="/bootstrap/css/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="/JQuery/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <button type="button" onclick="time()" class="btn btn-primary">Promise</button>
+    <button type="button" onclick="promi()" class="btn btn-primary">Promise2</button>
+    <button type="button" onclick="aj()" class="btn btn-primary">B동기 통신</button>
+    <button type="button" onclick="ay()" class="btn btn-primary">동기 B군 통신</button>
+
+    <script>
+
+        //async
+        async function ay() {
+            //await > 완전히 끝날 때 까지 기다려줌
+            //Promise가 복잡해서 이걸 단순하게 만듦
+            //그래서 이 기능은 Promise가 적용 된 것만 사용 가능함 >>>중요<<<
+
+            await $.ajax({
+                url: 'http://localhost:3000/send1',
+                type: 'post',
+                data: JSON.stringify(obj),
+                contentType: 'application/json',
+                success: function(res) {
+                    console.log(res);
+
+                    resolve(res);
+                    
+                    },
+                    error: (xhr, status, error) => {
+                        reject(status);
+                    }
+                });
+        }
+
+
+        //비동기 통신
+        function aj() {
+            let result = new Object(); //결과 보관
+            let obj = {name:'슈퍼맨'}; //ajax에 보내는 놈
+            let pro = () => new Promise((resolve, reject) => {
+
+                $.ajax({
+                url: 'http://localhost:3000/send1',
+                type: 'post',
+                data: JSON.stringify(obj),
+                contentType: 'application/json',
+                success: function(res) {
+                    console.log(res);
+
+                    resolve(res);
+                    
+                    },
+                    error: (xhr, status, error) => {
+                        reject(status);
+                    }
+                });
+            })
+            .then(result => {
+                console.log(result);
+            })
+            .catch(result => {
+                console.log('짐승 합격! : '+ result);
+            })
+            pro();
+        }
+
+        function promi() {
+            let pro = new Promise((resolve, reject) => {
+                console.log('동작 구현');
+                let check = true;
+                //resolve > 이 코드가 성공적으로 끝났을 때 동작
+                if(check) {
+                    resolve('짐승 탈락');
+                } else  { //reject > 코드가 실패 혹은 error 났을 때 동작
+                    reject('인간 실격');
+                }
+            });
+            pro.then(res => {  //resolv에 넣은 함수가 실행 되면 얘가 실행됨
+                console.log(res);
+            })
+            .catch(res => {
+                console.log(res);
+            })
+            .finally(() => {
+                console.log('무적권 실행');
+            })
+        }
+
+        // DB 주고 받을 때, Database와 연결하는 것도 비동기
+        // Primary key를 지정 안 한 상태라 가정,
+        // 1, 2, 3, 4, 5 'IDX' 컬럼이 해당 기능을 제공
+        // 1. 해당 테이블의 'IDX' 컬럼의 제일 마지막 번호를 갖고 와야함
+        // 2. 1이 끝나면 그 결과값을 가지고 Insert 진행
+
+        //위의 행위에서 비동기 진행을 하지 않을 경우
+        // 1번을 시키고 안 기다린 다음 2번 실행함
+        // 나 실행했어염 => 근데 1번을 안 기다리고 2번 실행해버림
+
+        // 이거 기다리려고 PROMISE 함
+
+        function time() {
+            setTimeout(() => {
+                console.log('set time out');
+            }, 1000);
+
+            console.log('실행 영역');
+        }
+    </script>
+</body>
+</html>

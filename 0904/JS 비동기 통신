@@ -1,0 +1,5 @@
+JS가 스스로 해결하기 어려운 부분
+HTML, CSS, Javascript 함수 Javascript가 처리 가능한 영역
+
+ajax, axios, petch(통신, server하고 통신)
+FTP 파일 I/O 등 이 코드가 오면 안 기다리고 다음을 실행

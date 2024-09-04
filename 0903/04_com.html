@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        table {
+            border: 1px solid lightgray;
+        }
+        tr>td:nth-child(1) {
+            text-align: center;
+            font-weight: bold;
+        }
+        .t_head {
+            background-color: rgb(159, 181, 255);
+        }
+        .t_title {
+            background-color: rgb(210, 220, 255);
+        }
+        .btn {
+            margin-top: 50px;
+            margin-left: 36%;
+            margin-right: 5px;
+        }
+        .intro {
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+    <script src="/JQuery/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <form novalidate>
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3" class="t_head">로그인</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="t_title">ID : </td>
+                    <td><input type="text" name="" id="user_id" placeholder="아이디 입력">
+                </tr>
+                <tr>
+                    <td class="t_title">PASSWORD : </td>
+                    <td><input type="password" name="" id="user_pw" placeholder="비밀번호 입력">
+                </tr>
+        </table>
+
+        <input type="button" class="btn" value="로그인" onclick="login()">
+    </form>
+
+    <script>
+        function login() {
+            let id = document.getElementById('user_id');
+            let pw = document.getElementById('user_pw');
+
+            let obj = {
+                'id':id.value,
+                'pw':pw.value
+            };
+
+            $.ajax({
+                url: 'http://localhost:3000/login',
+                type: 'get',
+                data: obj,
+                dataType: 'json',
+                success: function(res) {
+                    if(res.status == 200) {
+                        let message = res.message;
+                        alert(message);
+                    }
+                }
+            })
+        }
+    </script>
+</body>
+</html>

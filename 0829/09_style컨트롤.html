@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>컨트롤하기</title>
+    <script src="/JQuery/jquery-3.7.1.js"></script>`+
+
+
+
+
+    +       q**
+</head>
+	<body>
+		<table border="0" cellpadding="3" cellspacing="0">
+			<tr>
+				<td>
+					<input type="text" id="tbString">
+					<input type="button" value="미리 보기" onclick="viewText()">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					색상: <select id="fontColor">
+						<option value="red">빨강</option>
+						<option value="green">초록</option>
+						<option value="blue">파랑</option>
+			</tr>
+			<tr>
+				<td>
+					크기: <select id="fontSize">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" name="fontOptions" value="del">취소선
+					<input type="checkbox" name="fontOptions" value="big">크게
+					<input type="checkbox" name="fontOptions" value="small">작게
+					<input type="checkbox" name="fontOptions" value="bold">두껍게
+					<input type="checkbox" name="fontOptions" value="oblique">기울임
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" name="fontOptions" value="super">위첨자
+					<input type="checkbox" name="fontOptions" value="sub">아래첨자
+					<input type="checkbox" name="fontOptions" value="smallText">소문자로
+					<input type="checkbox" name="fontOptions" value="bigText">대문자로
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span id="result"></span>
+				</td>
+			</tr>
+		</table>
+
+        <script>
+            let textTest = $('#tbString');
+            
+            let sizeChange;
+            
+            
+            //컬러
+            $('#fontColor').on('change', () => {
+                let fontColor = $('#fontColor').val();
+                $('#result').css('color', fontColor);
+            });
+
+            //사이즈
+            $('#fontSize').on('change', () => {
+                let fSize = +$('#fontSize').val()*10;
+                sizeChange = fSize;
+                $('#result').css('fontSize', fSize);
+            });
+
+            
+
+            function viewText() {
+                $('#result').text(textTest.val());
+                let textOption = $('input[name="fontOptions"]:checked');
+                let opt = ''
+                for (let i = 0; i<textOption.length; i++) {
+                    switch(textOption[i].value) {
+                        case "del" :
+                            opt = 'line-through';
+                            $('#result').css('textDecoration', opt);
+                            break;
+                        case "big" :
+                            sizeChange = sizeChange*1.5;
+                            $('#result').css('fontSize', sizeChange);
+                            break;
+                        case "small" :
+                            sizeChange = sizeChange*0.5;
+                            $('#result').css('fontSize', sizeChange);
+                            break;
+                        case "bold" :
+                            opt = 'bold';
+                            $('#result').css('fontWeight', opt);
+                            break;
+                        case "oblique" :
+                            opt = 'oblique';
+                            $('#result').css('fontStyle', opt);
+                            break;
+                        case "super" :
+                            opt = 'super';
+                            $('#result').css('verticalAlign', opt);
+                            break;
+                        case "sub" :
+                            opt = 'sub';
+                            $('#result').css('verticalAlign', opt);
+                            break;
+                        case "smallText" :
+                            opt = 'lowrcase';
+                            $('#result').css('textTransform', opt);
+                            break;
+                        case "bigText" :
+                            opt = 'uppercase';
+                            $('#result').css('textTransform', opt);
+                            break;
+                    }
+                }
+            }
+            
+ㄱㅏㄴㅏㄷㅏ
+        </script>
+	</body>
+</html>
